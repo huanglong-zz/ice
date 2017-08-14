@@ -1,0 +1,93 @@
+@import '~static/sass/mixin'
+@import '~static/sass/color'
+@import '~static/sass/var'
+
+.container
+
+  .character-header
+    position: relative
+    height: 8rem
+    margin-bottom: $spacing
+    overflow: hidden
+
+    .background
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      filter: brightness(80%) opacity(50%) grayscale(70%)
+      -webkit-filter: brightness(80%) opacity(50%) grayscale(70%)
+
+    .media
+      width: 100%
+      height: 70%
+      padding: 0 $spacing
+      +border-box
+      position: absolute
+      bottom: 0
+      left: 0
+      z-index: 2
+      font-size: 0
+
+      > *
+        display: inline-block
+        vertical-align: middle
+        height: 100%
+
+      img
+        max-width: 40%
+
+      .desc
+        width: 60%
+        +font-dpr(10px)
+        position: relative
+
+        > *
+          position: absolute
+
+        .names
+          color: $white
+          line-height: 230%
+          top: 30%
+          left: $spacing
+
+          .cname
+            font-size: 2.1em
+
+          .name
+            font-size: 1.7em
+
+  .character-body
+    +border-box
+    +font-dpr(10px)
+
+    >*:not(.stills)
+      padding: 0 $spacing
+
+    .intro
+      font-size: 2em
+      text-indent: 2em
+      color: $grey-600
+
+    .stills
+      +x-scroll
+      padding: $spacing 0 $spacing $spacing
+
+      img
+        width: 80%
+
+      img:not(:last-child)
+        margin-right: $spacing/2
+
+    .items
+
+      .title
+        font-size: 2.2em
+        border-bottom: 1px solid $grey-400
+        padding-bottom: $spacing / 3
+
+      .body
+        text-indent: 2em
+        font-size: 1.7em
+        color: $grey-600
+        margin: $spacing 0

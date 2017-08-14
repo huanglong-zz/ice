@@ -1,0 +1,438 @@
+@import '~static/sass/var'
+@import '~static/sass/color'
+@import '~static/sass/mixin'
+
+.container
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+
+hr
+  margin: .6 * $gutter 0
+
+.card
+  width: 440px !important
+  height: 480px
+  display: flex
+  flex-direction: column
+  align-items: center
+  border: 1px solid$grey-300
+  box-shadow: $shadow-1db
+
+  .card-header
+    width: 100%
+    border-bottom: 1px solid$grey-300
+
+    .card-inner
+      margin: 12px 16px
+      font-size: 20px
+      line-height: 28px
+
+  .card-body
+    flex: 1
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    padding-top: 3 * $gutter
+
+    .login-icon
+      margin-bottom: 2 * $gutter
+
+    .form
+      width: calc(100% - 4 * #{$gutter})
+
+      .login-btn
+        background-color: $teal-300
+        color: $white
+
+.form
+  display: flex
+  flex-direction: column
+  
+.form-control
+  width: calc(100% - 2 * #{$gutter})
+  height: 36px
+  padding: 0 $gutter
+  line-height: 36px
+  font-size: $supplement
+  margin-bottom: .6 * $gutter
+
+.content
+  flex: 1
+  height: calc(100vh - 56px)
+  padding: 10px 16px 50px 16px
+  overflow: scroll
+
+.houses
+  width: calc(100% - 32px)
+  padding: 0 16px
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+  .house
+    width: 240px
+    margin-bottom: 16px
+    cursor: pointer
+    margin-left: 16px
+
+    img
+      width: 100%
+
+.characters
+  width: calc(100% - 32px)
+  padding: 0 16px
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+  .character
+    width: 140px
+    margin: 0 8px 16px 8px
+    cursor: pointer
+    position: relative
+
+    img
+      width: 100%
+
+    .character-detail
+
+.btn
+  &:focus
+    outline: none
+
+  &:hover
+    background-color: hsla(0, 0%, 60%, .2)
+
+  min-width: 88px
+  min-height: 36px
+  padding: 0 16px
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+  overflow: hidden
+  user-select: none
+  cursor: pointer
+  background: none
+  border: 0
+  border-radius: 2px
+  color: $grey-900
+  font-size: 14px
+  font-weight: 500
+  transition: all .4s cubic-bezier(.25,.8,.25,1)
+
+.btn-blue
+  background-color: $blue
+  color: $white
+
+  &:hover
+    background-color: $blue-600
+
+
+.edit-form
+  width: 60vw
+
+  .input-group
+    display: flex
+    align-items: center
+    border-bottom: 1px solid $grey-300
+    min-height: 48px
+    font-size: 14px
+
+    label
+      width: 150px
+      margin-right: 20px
+
+    .swornMembers
+      flex: 1
+      padding: 16px 0
+
+      .swornMember
+        display: flex
+        margin-bottom: 20px
+
+        .swornMember-text
+          flex: 1
+          margin-left: 20px
+          display: flex
+          flex-direction: column
+          align-items: space-between
+          justify-content: center
+
+        img
+          width: 100px
+          height: 150px
+
+    .profile
+      width: 150px
+      margin: 16px 0
+      img
+        width: 100%
+
+    .images
+      flex: 1
+      margin-left: 20px
+      max-height: 235px
+      overflow: scroll
+      display: flex
+      flex-wrap: wrap
+
+      .img
+        border: 1px solid$grey-300
+        margin: 2px 
+
+      img
+        width: 100px
+  
+    .sections
+      flex: 1
+      display: flex
+      flex-wrap: wrap
+
+      .section
+        border: 2px dotted$grey-400
+        padding: 3px
+        margin: 8px 0
+
+        &:hover
+          .tools
+            display: inline
+
+    .delete-section
+      font-size: 14px
+      padding: 6px
+      background-color: $red
+      color: $white
+      border-radius: 50%
+      cursor: pointer
+      margin-left: 16px
+
+    input
+      flex: 1
+
+    .tools
+      display: inline
+      margin-left: 10px
+      width: 50px
+      display: none
+  
+      .material-icon
+        cursor: pointer
+        font-size: 12px
+        font-weight: 900
+        color: $white
+        border-radius: 50%
+        padding: 3px
+
+      .edit
+        background-color: $green
+        margin-right: 12px
+
+      .delete
+        background-color: $grey-400
+
+.save-edit
+  float: right
+  width: 150px
+  height: 50px
+  color: $white
+  font-size: 20px
+  background-color: $green
+
+.edit-product
+  width: 480px
+  min-height: 200px
+  background-color: $white
+  box-shadow: $shadow-4db
+  position: fixed
+  bottom: 0
+  right: 100px
+  transform: translateY(100%)
+  transform-origin: top center
+  transition: all 275ms $fastOutLinearIn
+  border-radius: 4px 4px 0 0
+  z-index: 9
+
+  .edit-header
+    width: calc(100% - 32px)
+    height: 38px
+    padding: 0 16px
+    border-radius: 4px 4px 0 0
+    display: flex
+    align-items: center
+    background-color: $grey-800
+    color: $white
+
+    .material-icon
+      font-size: $title2
+      
+  .edit-body
+    width: calc(100% - 32px)
+    max-height: calc(100vh - 200px)
+    overflow: scroll
+    padding: 16px
+
+    .edit-form
+      width: 100%
+      
+      textarea
+        min-height: 100px
+        flex: 1
+        margin: 16px 0
+
+      label
+        width: 80px
+      
+    .input-group
+      width: 100%
+    
+    .parameters
+      flex: 1
+      display: flex
+      flex-wrap: wrap
+      padding: 16px 0
+
+    .inputs
+      display: flex
+      justify-content: space-between
+      margin-bottom: 10px
+      flex: 1
+
+      input
+        width: 120px
+        margin-right: 10px
+        flex: 1
+
+      .remove
+        width: 25px
+        height: 25px
+        margin-top: 3px
+        background-color: $red
+        color: $white
+        font-size: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        cursor: pointer
+
+
+    .upload-images
+      flex: 1
+      min-height: 150px
+      padding: 16px 0
+
+      .img
+        width: 154px
+        height: 104px
+        text-align: center
+        float: left
+        margin: 0 10px 10px 0
+        border: 1px solid$grey-200
+        position: relative
+
+        &:hover
+          .tools
+            display: block
+
+
+        .tools
+          width: 100%
+          height: 30px
+          line-height: 30px
+          position: absolute
+          top: 0
+          left: -10px
+          z-index: 2
+          background-color: $grey-800
+          opacity: .7
+
+          .material-icon
+            font-size: 20px
+            color: $white
+
+        img
+          max-width: 100%
+          max-height: 100%
+
+      .upload-btn
+        width: 150px
+        height: 100px
+        cursor: pointer
+        border: 2px dotted$blue-grey-200
+        border-radius: 4px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        position: relative
+
+        input
+          width: 100%
+          height: 100%
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 2
+          opacity: 0
+
+        .text
+          color: $blue-grey-400
+  
+  .edit-footer
+    padding: 16px
+    display: flex
+
+    .save
+      background-color: $blue
+      color: $white
+      box-shadow: $shadow-1db
+
+    .add-parameter
+      width: 80px
+      margin-left: 20px
+      float: left
+
+  &.active
+    transform: translateY(0)
+    transition: all 275ms $linearOutSlowIn
+  
+.table
+  width: 100%
+  td
+    font-size: 14px
+    max-width: 260px
+
+  .img
+    width: 50px
+    img
+      width: 100%
+
+.float-btn
+  width: 56px
+  height: 56px
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $white
+  position: absolute
+  bottom: 30px
+  right: 26px
+  border-radius: 50%
+  box-shadow: $shadow-1db
+  background-color: $pink
+  cursor: pointer
+
+  .material-icon
+    font-size: 26px
+
+.spinner-content
+  width: 100%
+  display: flex
+  justify-content: center
+

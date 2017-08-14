@@ -1,0 +1,29 @@
+{
+  "apps": [{
+    "name": "Ice",
+    "script": "server.js",
+    // "instances": 2
+    "env": {
+      "COMMON_VARIABLE": "true"
+    },
+    "env_production": {
+      "NODE_ENV": "production"
+    }
+  }],
+  "deploy": {
+    "production": {
+      "user": "imooc_manager",
+      "host": ["120.26.235.4"],
+      "port": "39999",
+      "ref": "origin/master",
+      "repo": "git@git.oschina.net:wolf18387/ice.git",
+      "path": "/www/ice/production",
+      "ssh_options": "StrictHostKeyChecking=no",
+      // "post-deploy": "npm install",
+      "pre-deploy-local": "echo 'Deploy Done!'",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}

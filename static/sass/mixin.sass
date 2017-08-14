@@ -1,0 +1,53 @@
+@mixin font-dpr($font-size)
+  font-size: $font-size
+  [data-dpr='2'] & 
+    font-size: $font-size * 2
+  [data-dpr='3'] & 
+    font-size: $font-size * 3
+
+@mixin size-dpr($size, $properties...)
+  @each $property in $properties
+    #{$property}: $size
+    [data-dpr='2'] & 
+      #{$property}: $size * 2
+    [data-dpr='3'] & 
+      #{$property}: $size * 3
+  
+
+@mixin text-overflow
+  width: 100%
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+@mixin x-scroll
+  overflow-y: hidden
+  overflow-x: scroll
+  -webkit-overflow-scrolling: touch
+  white-space: nowrap
+
+@mixin y-scroll
+  overflow-x: hidden
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+
+@mixin break-word
+  word-wrap: break-word
+  white-space: normal
+
+@mixin border-box
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+
+@mixin display-flex
+  display: flex
+  display: -webkit-flex
+  display: -webkit-box
+  display: -ms-flexbox
+
+@mixin flex-column
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
+  flex-direction: column

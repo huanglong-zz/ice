@@ -1,0 +1,118 @@
+@import '~static/sass/mixin'
+@import '~static/sass/color'
+@import '~static/sass/var'
+
+.container
+  +border-box
+  padding-bottom: $navHeight
+
+  .house
+    padding: 0 0 $spacing
+    +x-scroll
+
+    .items
+      margin-left: $spacing/2
+      width: 90%
+      font-size: 0
+      display: inline-block
+
+    &:first-child
+      margin-left: $spacing
+
+    .house-flag
+      width: 100%
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .2)
+      overflow: hidden
+
+      img
+        width: 100%
+
+    .desc
+      width: 100%
+      padding: $spacing/2 0
+      +font-dpr(10px)
+      +border-box
+      +break-word
+
+      .words
+        font-size: 1.4em
+        color: $grey-700
+
+      .cname
+        font-size: 1.9em
+        color: $black
+
+      .name
+        font-size: 1.8em
+        color: $grey-700
+
+.character
+  padding: 0 $spacing
+  margin-bottom: $spacing
+  background: $white
+  +border-box
+
+  .title
+    +font-dpr(19px)
+    padding: $spacing 0
+    border-top: 1px solid $grey-400
+
+  .section
+    padding: 0 0 $spacing
+    border-bottom: 1px solid $grey-400
+    font-size: 0
+
+    .items:nth-child(2n)
+      margin-left: 5%
+
+    .items
+      width: 47.5%
+      +break-word
+      display: inline-block
+      margin-bottom: $spacing
+
+      img
+        width: 100%
+        box-shadow: 0 0 2px rgba(0, 0, 0, .0)
+        margin-bottom: $spacing/3
+
+      .desc
+        +font-dpr(10px)
+
+        .cname
+          font-size: 1.5em
+          color: $black
+
+        .name
+          font-size: 1.2em
+          color: $grey-600
+
+        .playedBy
+          font-size: 1.2em
+          color: $grey-600
+
+.city
+  padding: 0 $spacing $spacing
+  +font-dpr(10px)
+  +border-box
+  line-height: 2em
+  position: relative
+
+
+  .city-title
+    font-size: 1.9em
+  .intro
+    font-size: 1.6em
+    color: $grey-800
+  .items
+    font-size: 1.45em
+    color: $grey-700
+    margin-top: $spacing*2
+
+
+
+
+
+
+
+
