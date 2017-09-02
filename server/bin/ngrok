@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./server/bin/sunny clientid bc2306fbc8bfe347

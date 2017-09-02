@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon -w ./server -w ./start.js --exec node ./start.js",
-    "build": "nuxt build && backpack build",
+    "build": "nuxt build",
+    "ngrok": "./server/bin/ngrok",
     "start": "cross-env NODE_ENV=production node build/main.js",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
@@ -19,6 +20,9 @@
     "cross-env": "^5.0.0",
     "ejs": "^2.5.6",
     "formstream": "^1.1.0",
+    "graphql": "0.10.1",
+    "graphql-date": "^1.0.3",
+    "graphql-server-koa": "0.8.3",
     "koa": "^2.0.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "v7.2.1",

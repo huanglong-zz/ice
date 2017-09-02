@@ -27,18 +27,12 @@ export function getAuthorizeURL (...args) {
 export async function getUserByCode (code) {
   const oauth = getOAuth()
   const data = await oauth.fetchAccessToken(code)
-  console.log(data)
   const user = await oauth.getUserInfo(data.access_token, data.unionid)
-  console.log(user)
   // const user = await oauth.getUserInfo(data.access_token, data.openid)
 
   const existUser = await User.findOne({
     unionid: data.unionid
   }).exec()
-
-  console.log('existUser')
-
-  console.log(existUser)
 
   if (!existUser) {
     let newUser = new User({
@@ -60,6 +54,7 @@ export async function getUserByCode (code) {
     province: user.province,
     country: user.country,
     city: user.city,
+    unionid: user.unionid,
     headimgurl: user.headimgurl,
     sex: user.sex
   }

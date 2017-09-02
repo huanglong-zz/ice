@@ -2,6 +2,14 @@ import mongoose from 'mongoose'
 
 const Product = mongoose.model('Product')
 
+export async function findProduct (_id) {
+  const data = await Product
+    .find({_id: _id})
+    .exec()
+
+  return data
+}
+
 export async function getProducts (limit = 50) {
   const data = await Product
     .find({})

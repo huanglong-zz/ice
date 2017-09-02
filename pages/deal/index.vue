@@ -15,7 +15,7 @@
     .name {{product.title}}
     .intro {{product.intro}}
     .info
-      cell(v-for='(item, index) in product.parameters' :key='index' :title='item.key' :content='item.value')
+      cell(v-for='(item, index) in product.parameters' :key='index' :title='item.key' :content='Number(item.value)')
     .attentions
       .title 购买提示
       ol
@@ -168,7 +168,7 @@ export default {
     const url = window.location.href
 
     this.$store.dispatch('showProduct', id)
-    await this.wechatConfig(url)
+    await this.wechatInit(url)
   },
 
   components: {

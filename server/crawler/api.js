@@ -1,5 +1,6 @@
 import rp from 'request-promise'
 import _ from 'lodash'
+import { resolve } from 'path'
 import { writeFileSync } from 'fs'
 // import Agent from 'socks5-http-client/lib/Agent'
 
@@ -27,7 +28,7 @@ export const getAPICharacters = async (page = 1) => {
 
     return
   } else {
-    writeFileSync('./characters.json', JSON.stringify(characters, null, 2), 'utf8')
+    writeFileSync(resolve(__dirname, '../database/json/characters.json'), JSON.stringify(characters, null, 2), 'utf8')
     
     await sleep(1000)
 

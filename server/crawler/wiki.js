@@ -96,7 +96,7 @@ const getWikiDetail = async data => {
 
 // osm3xqbp6.bkt.clouddn.com
 export const getWikiCharacters = async () => {
-  let data = require(resolve(__dirname, '../../fullCharacters.json'))
+  let data = require(resolve(__dirname, '../database/json/fullCharacters.json'))
   console.log(data.length)
   data = R.map(getWikiId, data)
   data = await Promise.all(data)
@@ -112,7 +112,7 @@ export const getWikiCharacters = async () => {
 }
 
 export const fetchImageFromIMDb = async () => {
-  let IMDbCharacters = require(resolve(__dirname, '../../completeCharacters.json'))
+  let IMDbCharacters = require(resolve(__dirname, '../database/json/completeCharacters.json'))
 
   // IMDbCharacters = [
   //   IMDbCharacters[0]
@@ -223,8 +223,8 @@ export const getHouses = async () => {
 
 
 export const getSwornMembers = () => {
-  let houses = require(resolve(__dirname, '../../wikiHouses.json'))
-  let characters = require(resolve(__dirname, '../../completeCharacters.json'))
+  let houses = require(resolve(__dirname, '../database/json/wikiHouses.json'))
+  let characters = require(resolve(__dirname, '../database/json/completeCharacters.json'))
 
   const findSwornMembers = R.map(
     R.compose(
@@ -269,7 +269,7 @@ export const getSwornMembers = () => {
     return item
   })
 
-  writeFileSync('./completeHouses.json', JSON.stringify(houses, null, 2), 'utf8')
+  writeFileSync(resolve(__dirname, '../database/json/completeHouses.json'), JSON.stringify(houses, null, 2), 'utf8')
 }
 
 getSwornMembers()

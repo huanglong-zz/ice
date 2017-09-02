@@ -16,8 +16,8 @@ const formatData = R.map(i => {
   return i
 })
 
-let wikiCharacters = require(resolve(__dirname, '../../completeCharacters.json'))
-let wikiHouses = require(resolve(__dirname, '../../completeHouses.json'))
+let wikiCharacters = require(resolve(__dirname, '../database/json/completeCharacters.json'))
+let wikiHouses = require(resolve(__dirname, '../database/json/completeHouses.json'))
 
 wikiCharacters = formatData(wikiCharacters)
 
@@ -35,7 +35,6 @@ export const database = app => {
 
   mongoose.connection.on('open', async () => {
     console.log('Connected to MongoDB ', config.db)
-
 
     const WikiHouse = mongoose.model('WikiHouse')
     const WikiCharacter = mongoose.model('WikiCharacter')

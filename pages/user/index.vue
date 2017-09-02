@@ -3,7 +3,7 @@
   .user(v-if='user')
     .user-header
       .text {{user.nickname}}
-      img(:src='imageCDN + user.avatarUrl + "?imageView2/1/format/jpg/q/75/imageslim')
+      img(:src='imageCDN + user.avatarUrl + "?imageView2/1/format/jpg/q/75/imageslim"')
     .user-address
       cell(title='收货地址')
       .user-content {{user.address}}
@@ -17,7 +17,7 @@
     .user-order(v-if='user.orders')
       cell(title='我的订单')
       .user-order-items(v-for='item in user.orders')
-        img(:src='imageCDN + item.product.images[0] + "?imageView2/1/format/jpg/q/75/imageslim')
+        img(:src='imageCDN + item.product.images[0] + "?imageView2/1/format/jpg/q/75/imageslim"')
         .user-order-intro
           .title {{item.product.title}}
           .content {{item.product.intro}}

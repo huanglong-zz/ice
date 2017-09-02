@@ -1,13 +1,11 @@
-export default {
-  db: 'mongodb://localhost/ice',
-  SITE_ROOT_URL: 'http://xxx.ngrok.cc',
-  wechat: {
-    appID: 'wxe9xxx',
-    appSecret: 'ebacaexxx',
-    token: 'imoocixxx'
-  },
-  "qiniu": {
-    "AK": "-dLxxx",
-    "SK": "wcgqxxx"
-  }
-}
+import _ from 'lodash'
+import { resolve } from 'path'
+
+const host = process.env.HOST || 'localhost'
+const env = process.env.NODE_ENV || 'development'
+const conf = require(resolve(__dirname, `./${env}.json`))
+
+export default _.assign({
+  env,
+  host
+}, conf)

@@ -81,7 +81,7 @@ const fetchIMDbProfile = async (url) => {
 }
 
 export const getIMDbProfile = async () => {
-  const characters = require(resolve(__dirname, '../../wikiCharacters.json'))
+  const characters = require(resolve(__dirname, '../database/json/wikiCharacters.json'))
 
   console.log(characters.length)
 
@@ -102,7 +102,7 @@ export const getIMDbProfile = async () => {
 }
 
 const checkIMDbProfile = () => {
-  const characters = require(resolve(__dirname, '../../imdbCharacters.json'))
+  const characters = require(resolve(__dirname, '../database/json/imdbCharacters.json'))
   const newCharacters = []
 
   characters.forEach((item) => {
@@ -111,7 +111,7 @@ const checkIMDbProfile = () => {
     }
   })
   
-  writeFileSync('./validCharacters.json', JSON.stringify(newCharacters, null, 2), 'utf8')
+  writeFileSync(resolve(__dirname, '../database/json/validCharacters.json'), JSON.stringify(newCharacters, null, 2), 'utf8')
 }
 
 const fetchIMDbImage = async (url) => {
@@ -137,7 +137,7 @@ const fetchIMDbImage = async (url) => {
 }
 
 export const getIMDbImages = async () => {
-  const characters = require(resolve(__dirname, '../../fullCharacters.json'))
+  const characters = require(resolve(__dirname, '../database/json/fullCharacters.json'))
 
   for (let i = 0; i < characters.length; i++) {
     if (!characters[i].images) {
@@ -148,7 +148,7 @@ export const getIMDbImages = async () => {
 
       characters[i].images = images
 
-      writeFileSync('./fullCharacters.json', JSON.stringify(characters, null, 2), 'utf8')
+      writeFileSync(resolve(__dirname, '../database/json/fullCharacters.json'), JSON.stringify(characters, null, 2), 'utf8')
 
       await sleep(500)
     }

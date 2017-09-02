@@ -1,0 +1,23 @@
+{
+  "db": "mongodb://localhost/ice",
+  "SITE_ROOT_URL": "http://codingdream.ngrok.cc",
+  "wechat": {
+    "appID": "wxe9e2ec8d631c277d",
+    "appSecret": "ebacae6574a8aa091684c937edf6f48d",
+    "token": "imoocisareallyamzingplacetolearn"
+  },
+  "mina": {
+    "appid": "wxcac851ec7e9550e2",
+    "secret": "352c61a7c8887e03643a1ff18eb8c5c8"
+  },
+  "shop": {
+    "appID": "wxcac851ec7e9550e2",
+    "mchId": "1484430062",
+    "notifyUrl": "https://iceandfiremini.iblack7.com/wx/n",
+    "key": "imoocisareallyamzingplacetolearn"
+  },
+  "qiniu": {
+    "AK": "-dLG8KAfn4_fmsxZBfeqDgrtyM7e3rIzQezhdxvk",
+    "SK": "wcgqiwkL7QaX5Bz8OtyJEfLuAFb_qCrqFg_eNbW0"
+  }
+}
