@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style scoped lang='sass' src='~static/sass/shopping.sass'></style>
+<style scoped lang='sass' src='public/static/sass/shopping.sass'></style>
 
 
 

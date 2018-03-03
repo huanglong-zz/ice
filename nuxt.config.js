@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -32,6 +34,12 @@ module.exports = {
       src: 'swiper/dist/css/swiper.css'
     }
   ],
+
+  build: {
+    extend (config, { isClient }) {
+      config.resolve.alias['public'] = path.resolve(__dirname, './')
+    }
+  },
 
   plugins: [
     {

@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import vSnackbar from '~components/snackbar'
+import vSnackbar from 'public/components/snackbar'
 
 export default {
   data () {
@@ -74,7 +74,7 @@ export default {
 </script>
 
 
-<style scoped lang='sass' src='~static/sass/admin.sass'></style>
+<style scoped lang='sass' src='public/static/sass/admin.sass'></style>
 
 
 

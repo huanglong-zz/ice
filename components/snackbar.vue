@@ -28,4 +28,4 @@ export default {
 
 </script>
 
-<style lang='sass' src='~static/sass/snackbar.sass'></style>
+<style lang='sass' src='public/static/sass/snackbar.sass'></style>

@@ -49,9 +49,9 @@
 </template>
 
 <script>
-import cell from '~components/cell.vue'
+import cell from 'public/components/cell.vue'
 import { mapState } from 'vuex'
-import wechat from '~static/mixins/wechat.js'
+import wechat from 'public/static/mixins/wechat.js'
 
 function toggleModal (obj, content) {
   clearTimeout(obj.timer)
@@ -177,7 +177,7 @@ export default {
 }
 </script>
 
-<style scoped lang='sass' src='~static/sass/deal.sass'></style>
+<style scoped lang='sass' src='public/static/sass/deal.sass'></style>
 
 
 

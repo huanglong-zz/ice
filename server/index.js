@@ -1,5 +1,5 @@
 import Koa from 'koa'
-import Nuxt from 'nuxt'
+import { Nuxt, Builder } from 'nuxt'
 import R from 'ramda'
 import { resolve } from 'path'
 
@@ -34,7 +34,8 @@ class Server {
     // Build in development
     if (config.dev) {
       try {
-        await nuxt.build()
+        const builder = new Builder(nuxt)
+        await builder.build()
       } catch (e) {
         console.error(e) // eslint-disable-line no-console
         process.exit(1)

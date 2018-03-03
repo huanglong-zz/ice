@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import cell from '~components/cell.vue'
+import cell from 'public/components/cell.vue'
 import { mapState } from 'vuex'
 
 export default {
@@ -54,4 +54,4 @@ export default {
 
 </script>
 
-<style scoped lang='sass' src='~static/sass/user.sass'></style>
+<style scoped lang='sass' src='public/static/sass/user.sass'></style>

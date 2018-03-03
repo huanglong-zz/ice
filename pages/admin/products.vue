@@ -84,7 +84,7 @@ import { mapState } from 'vuex'
 import axios from 'axios'
 import randomToken from 'random-token'
 import Uploader from 'qiniu-web-uploader'
-import vSnackbar from '~components/snackbar'
+import vSnackbar from 'public/components/snackbar'
 
 export default {
   layout: 'admin',
@@ -220,4 +220,4 @@ export default {
   }
 }
 </script>
-<style lang='sass' src='~static/sass/admin.sass'></style>
+<style lang='sass' src='public/static/sass/admin.sass'></style>

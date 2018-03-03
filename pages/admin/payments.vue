@@ -27,7 +27,7 @@
 </template>
 <script type="text/javascript">
 import { mapState } from 'vuex'
-import vSnackbar from '~components/snackbar'
+import vSnackbar from 'public/components/snackbar'
 
 export default {
   middleware: 'auth',
@@ -58,4 +58,4 @@ export default {
   }
 }
 </script>
-<style lang='sass' src='~static/sass/admin.sass'></style>
+<style lang='sass' src='public/static/sass/admin.sass'></style>

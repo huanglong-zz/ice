@@ -22,4 +22,4 @@ export default {
 
 </script>
 
-<style lang='sass' src='~static/sass/admin.sass'></style>
+<style lang='sass' src='public/static/sass/admin.sass'></style>
